@@ -16,7 +16,7 @@ app.get('/api/topics', async (req, res) => {
     res.json(result.rows);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Fehler beim Laden der Themen');
+    res.status(500).json({ error: 'Fehler beim Laden der Themen' });
   }
 });
 
@@ -36,7 +36,7 @@ app.post('/api/topics', async (req, res) => {
     res.status(201).json(result.rows[0]);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Fehler beim Erstellen des Themas');
+    res.status(500).json({ error: 'Fehler beim Erstellen des Themas' });
   }
 });
 
@@ -51,7 +51,7 @@ app.get('/api/topics/:id', async (req, res) => {
     res.json(result.rows[0]);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Fehler beim Laden des Themas');
+    res.status(500).json({ error: 'Fehler beim Laden des Themas' });
   }
 });
 

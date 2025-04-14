@@ -1,11 +1,11 @@
 const { Pool } = require('pg');
+require('dotenv').config(); // damit .env gelesen wird
 
 const pool = new Pool({
-  user: 'daschuepf', // dein macOS Benutzername
-  host: 'localhost',
-  database: 'themenplattform',
-  password: '',      // leer lassen, wenn du kein Passwort gesetzt hast
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 module.exports = pool;
