@@ -1,0 +1,15 @@
+{
+    "name": "themenplattform-backend",
+    "version": "1.0.0",
+    "description": "Backend für Themenplattform",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "open-graph-scraper": "^6.9.0",
+        "pg": "^8.14.1"
+    }
+}
